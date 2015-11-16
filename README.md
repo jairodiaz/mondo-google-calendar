@@ -1,6 +1,10 @@
 # Mondo Hackathon
 
-This example application loads your bank transactions into your Google Calendar
+This example application loads your bank transactions into your Google Calendar.
+
+## Screen shot
+
+![Bank Transactions on Google Calendar](screen_shot.png?raw=true "Bank Transactions")
 
 ## Pre-requisites
 
@@ -10,22 +14,26 @@ This example application loads your bank transactions into your Google Calendar
 2. Contact Mondo to get an OAuth client ID and secret for staging.
 
    Once you have the client id and secret, you can obtain an access token for a given user and password like this:
-
-    http --form POST "https://api.getmondo.co.uk/oauth2/token" \
-        "grant_type=password" \
-        "client_id=$client_id" \
-        "client_secret=$client_secret" \
-        "username=$user_email" \
+   ```
+    http --form POST "https://api.getmondo.co.uk/oauth2/token"
+        "grant_type=password"
+        "client_id=$client_id"
+        "client_secret=$client_secret"
+        "username=$user_email"
         "password=$user_password"
+    ```
+
 
     The access token should be configured in the .env file
 
 3. To connect to Google Apps a special setup is required.
    Follow the guidelines from the Google Developer documentation:
 
-  https://developers.google.com/google-apps/calendar/quickstart/ruby
+   https://developers.google.com/google-apps/calendar/quickstart/ruby
 
-  From the 'Google Developers console' download the client_secret.json file. The console is at: https://console.developers.google.com/
+   From the 'Google Developers console' download the client_secret.json file. The console is at:
+
+   https://console.developers.google.com/
 
 ## Instructions
 
